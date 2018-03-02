@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>appendChild()</title>
+	<style type="text/css">
+		#addButton button {
+			display: block;
+			background: green;
+			padding: 10px;
+			color: #ffffff;
+		}
+		#addButton button:hover {
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="addButton"></div>
+
+	<script type="text/javascript">
+		var newButton = document.createElement('button');
+		newButton.textContent = "HI";
+		document.getElementById("addButton").appendChild(newButton);
+		newButton.addEventListener('click', printOk);
+		function printOk() {
+			document.write("Ok");
+		}
+	</script>
+</body>
+</html>

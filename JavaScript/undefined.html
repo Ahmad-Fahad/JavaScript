@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1 id="textMessage">Hello world</h1><br><br>
+	<button onclick="setText()">Click to change text</button>
+	<button id="changeText">Click</button>
+</body>
+</html>
+<script type="text/javascript">
+
+	var name = "datasoft";
+
+	var text = document.getElementById("text");
+
+	console.log(text);
+
+	document.write(typeof name);
+
+    alert(name);
+
+    // var name = "datasoft";
+
+	document.write("   OK execution did not closed<br><br>");
+
+
+
+	function setText() {
+
+		var textValue = prompt("Enter your message : ");
+
+		document.getElementById('textMessage').innerHTML = textValue;
+	} 
+
+	document.getElementById('changeText').addEventListener('click', setText, false);
+
+</script>

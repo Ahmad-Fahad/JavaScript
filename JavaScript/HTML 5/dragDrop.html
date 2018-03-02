@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drag and Drop</title>
+	<style type="text/css">
+		#drag1 {
+			display: block;
+			height: 200px;
+			width: 200px;
+			border: 2px solid green;
+			padding: 20px;
+			margin: 10px;
+		}
+		#drag2 {
+			display: block;
+			height: 200px;
+			width: 200px;
+			border: 2px solid green;
+			padding: 20px;
+			margin: 10px;
+		}
+    </style>
+
+</head>
+<body>
+	<div id="drag1" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+	</div>
+ <div id="drag2" ondrop="drop(event)" ondragover="allowDrop(event)" >
+	<img id="img" src="logo.png" height="200px" width="150px" draggable="true" ondragstart="drag(event)">
+</div>
+	<br />
+
+	<h2 id="debug">
+
+	</h2>
+	<script type="text/javascript">
+		debug = 1;
+		function allowDrop(ev) {
+			ev.preventDefault();
+			if(debug) {
+				document.getElementById('debug').innerHTML = ev.preventDefault();
+			}
+		}
+		function drag(ev) {
+			ev.dataTransfer.setData("text", ev.target.id);
+			if(debug) {
+				document.getElementById('debug').innerHTML = ev.target.id;
+			}
+		}
+		function drop(ev) {
+			// ev.preventDefault();
+			if(debug) {
+				document.getElementById('debug').innerHTML = ev.preventDefault();
+			}
+			var data = ev.dataTransfer.getData("text");
+			if (data) {
+				document.getElementById('debug').innerHTML = data;
+			}
+			ev.target.appendChild(document.getElementById(data));
+			if(debug) {
+				document.getElementById('debug').innerHTML = ev.target.appendChild(document.getElementById(data));
+			}
+		}
+	</script>
+</body>
+</html>

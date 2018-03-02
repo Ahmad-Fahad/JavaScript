@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Stroage</title>
+</head>
+<body>
+	<button id="btn" onclick="clickCount()">Click Me to Count</button>
+	<p id="clicksLocal"></p>
+	<br />
+	<p id="clicksSession"></p>
+	<br />
+	<button  onclick="remove()">Remove all storages</button>
+	<script type="text/javascript">
+		if(typeof(Storage) !== undefined) {
+			document.write("<br />Support<br />");
+
+			localStorage.setItem("Browser", "Chrome");
+			document.write(localStorage.getItem("Browser"));
+		}
+		else {
+			document.write("Not Supported");
+		}
+		function clickCount() {
+			if(localStorage.clickCount) {
+				localStorage.clickCount = Number(localStorage.clickCount) + 1;
+			}
+			else {
+				localStorage.clickCount = 1;
+			}
+			document.getElementById("clicksLocal").innerHTML = "You have clicked " + localStorage.clickCount + "time(s)";
+			
+			if(sessionStorage.clickCount) {
+				sessionStorage.clickCount = Number(sessionStorage.clickCount) + 1;
+			}
+			else {
+				sessionStorage.clickCount = 1;
+			}
+			document.getElementById("clicksSession").innerHTML = "You have clicked " + sessionStorage.clickCount + "time(s)";
+		}
+//  remove() function not working
+		function remove() {
+			
+				localStorage.removeItem("Browser");
+			
+		}
+	</script>
+</body>
+</html>

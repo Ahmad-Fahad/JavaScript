@@ -1,0 +1,36 @@
+.gameBoard {
+  width: 565px;
+  text-align: left;
+}
+.gameHeading {
+
+}
+.gameHeading h1 {
+
+}
+.details {
+  font-size: 18px;
+  line-height: 30.5px;
+}
+.userInput {
+
+}
+.guessField {
+
+}
+.guessSubmit {
+
+}
+.guesses {
+
+}
+.lastResult {
+  background: #ffffff;
+  color: #ffffff;
+  display: block;
+  padding: 10px 12px;
+  text-align: left;
+}
+.lowOrHigh {
+	
+}

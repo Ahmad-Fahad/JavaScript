@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+      <div id="demo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sagittis mi et eleifend tristique. Fusce tincidunt interdum augue, vel tincidunt quam accumsan a. Aliquam erat volutpat. Nam congue urna in mauris varius posuere. Vivamus sit amet magna purus. Suspendisse convallis porttitor elit, quis ultricies enim consectetur id. Vestibulum justo ligula, mattis ut eleifend eu, varius egestas nisl. Donec porta eros sodales nunc mollis, vel hendrerit magna semper. Phasellus convallis bibendum turpis. Praesent nisl risus, dictum sed luctus id, aliquam laoreet libero. In ac auctor nibh. Pellentesque mattis, quam sit amet mollis tincidunt, est leo fermentum elit, eget pretium urna elit id metus. Sed id tellus id nisi venenatis dignissim.
+      </div>
+</body>
+</html>
+<script type="text/javascript">
+var demo = document.getElementById('demo');
+var body = document.querySelector('body');
+
+demo.addEventListener('dblclick', function(e) {
+  var s = window.getSelection();
+  var w = s.focusNode.data.substring(s.anchorOffset, s.focusOffset).trim();
+  var inp = document.createElement('input');
+  body.appendChild(inp)
+  inp.value = w;
+  inp.select();
+  document.execCommand('copy', false);
+  inp.remove();
+});
+
+</script>
